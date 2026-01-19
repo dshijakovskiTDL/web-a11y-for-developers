@@ -63,20 +63,22 @@ code {
   position: relative;
   width: fit-content;
   padding: 1rem;
-  padding-left: calc(1rem + 6px);
+  padding-left: calc(1rem + 8px);
   border-radius: 0.5rem;
   background-color: #f0f0f0;
-  overflow: hidden;
+  border: 1px solid rgb(30 41 59 / 0.1);
 
-  &::before {
+  &::after {
     content: '';
     position: absolute;
 
-    width: 6px;
-    height: 100%;
+    width: 8px;
+    height: calc(100% + 1px);
     background: rgb(65, 65, 212);
-    top: 0;
-    left: 0;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    top: -1px;
+    left: -1px;
   }
 }
 
