@@ -1,0 +1,15 @@
+{
+  "name": "elektrum-a11y",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prettier": "^3.8.0",
+    "prettier-plugin-tailwindcss": "^0.7.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "dev": "bun --watch src/pages/**.html"
+  }
+}

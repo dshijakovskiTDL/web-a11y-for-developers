@@ -1,0 +1,101 @@
+html {
+  scroll-behavior: smooth;
+  background: rgba(203, 213, 225, 0.3);
+}
+
+body {
+  background-color: white;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+main {
+  padding-block: 2rem;
+  scroll-margin-block-start: 72px;
+}
+
+a:focus-visible {
+  outline-offset: 4px;
+}
+
+a[aria-current='page'] {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+p {
+  margin-block: 0.5rem;
+}
+
+hr {
+  margin-block: 2rem;
+}
+
+section p {
+  max-width: 80ch;
+  text-wrap: pretty;
+}
+
+code {
+  display: inline-block;
+  margin-block: 0.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #d7d7d7;
+}
+
+.container {
+  margin-inline: auto;
+  padding-inline: 12px;
+}
+
+.exercise {
+  position: relative;
+  width: fit-content;
+  padding: 1rem;
+  padding-left: calc(1rem + 6px);
+  border-radius: 0.5rem;
+  background-color: #f0f0f0;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+
+    width: 6px;
+    height: 100%;
+    background: rgb(65, 65, 212);
+    top: 0;
+    left: 0;
+  }
+}
+
+.code-span {
+  padding: 4px 6px;
+  border-radius: 0.25rem;
+  background-color: #cfcfcfbb;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+@media screen and (width < 780px) {
+  main {
+    padding-block: 3rem;
+    scroll-margin-block-start: 112px;
+  }
+
+  p {
+    margin-block: 1rem;
+  }
+
+  hr {
+    margin-block: 2.5rem;
+  }
+}
+
+@media screen and (width < 640px) {
+  main {
+    scroll-margin-block-start: 152px;
+  }
+}

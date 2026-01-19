@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/jpeg" href="../../public/tdl-logo.jpg" />
+
+    <title>Web Accessibility for Developers | Components</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#current-year').textContent =
+          new Date().getFullYear();
+      });
+    </script>
+  </head>
+
+  <body class="min-h-dvh">
+    <a
+      href="#main-content"
+      class="sr-only !absolute left-1/2 top-4 z-50 inline-block -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:h-auto focus-visible:outline-slate-900 max-lg:top-[80px] max-md:top-[120px] max-sm:top-[160px]"
+    >
+      Skip to content
+    </a>
+
+    <header
+      class="sticky top-0 z-10 bg-slate-300/30 py-5 shadow-lg backdrop-blur-sm"
+    >
+      <h1 class="max-md:mx-auto">
+        <a
+          href="#main-content"
+          class="sr-only !absolute left-1/2 top-4 z-50 -translate-x-1/2 rounded-lg !p-2 focus-visible:not-sr-only focus-visible:outline-slate-900"
+        >
+          Skip to content
+        </a>
+      </h1>
+
+      <nav
+        class="container mx-auto flex w-full items-center justify-between gap-4 max-md:flex-wrap"
+      >
+        <div class="max-md:mx-auto">
+          <a class="flex items-center gap-2 text-2xl max-sm:scale-90" href="/">
+            <img
+              src="../../public/tdl-logo.jpg"
+              width="30"
+              height="30"
+              class="inline rounded-full"
+              alt="TestDevLab"
+            />
+            Web A11y for Developers
+          </a>
+        </div>
+
+        <ul
+          class="flex flex-wrap gap-4 *:min-w-fit max-md:w-full max-md:justify-between max-sm:grid max-sm:grid-cols-2 max-sm:text-center"
+        >
+          <li><a href="/">Introduction</a></li>
+          <li><a href="./components" aria-current="page">Components</a></li>
+          <li><a href="./best-practices">Best Practices</a></li>
+          <li><a href="./tips-tricks">Tips & tricks</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content"></main>
+
+    <footer class="bg-slate-300/30 py-5 text-center">
+      <p>Web A11y for Developers, <span id="current-year">2026</span></p>
+    </footer>
+  </body>
+</html>
