@@ -1,6 +1,5 @@
 {
-  "name": "elektrum-a11y",
-  "private": true,
+  "name": "web-a11y-for-developers",
   "devDependencies": {
     "@types/bun": "latest",
     "prettier": "^3.8.0",
@@ -9,7 +8,9 @@
   "peerDependencies": {
     "typescript": "^5"
   },
+  "private": true,
   "scripts": {
-    "dev": "bun --watch src/pages/**.html"
+    "dev": "bun --watch src/pages/**.html",
+    "start": "bun src/server.js"
   }
 }
