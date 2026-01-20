@@ -8,7 +8,7 @@
 
     <title>Web Accessibility for Developers | Components</title>
 
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../styles/index.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,6 +20,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <link rel="stylesheet" href="../components/accordion/style.css" />
+    <script src="../components/accordion/accordion.js" />
+
     <script defer>
       document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#current-year').textContent =
@@ -29,29 +32,20 @@
   </head>
 
   <body class="min-h-dvh">
-    <a
-      href="#main-content"
-      class="absolute! max-md:top-30 sr-only left-1/2 top-4 z-50 inline-block -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:h-auto focus-visible:outline-slate-900 max-lg:top-20 max-sm:top-40"
-    >
-      Skip to content
-    </a>
-
     <header
       class="sticky top-0 z-10 bg-slate-300/30 py-5 shadow-lg backdrop-blur-sm"
     >
-      <h1 class="max-md:mx-auto">
-        <a
-          href="#main-content"
-          class="absolute! p-2! sr-only left-1/2 top-4 z-50 -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:outline-slate-900"
-        >
-          Skip to content
-        </a>
-      </h1>
+      <a
+        href="#main-content"
+        class="absolute! max-md:top-30 sr-only left-1/2 top-4 z-50 inline-block -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:h-auto focus-visible:outline-slate-900 max-lg:top-20 max-sm:top-40"
+      >
+        Skip to content
+      </a>
 
       <nav
         class="container mx-auto flex items-center justify-between gap-4 max-md:flex-wrap"
       >
-        <div class="max-md:mx-auto">
+        <h1 class="max-md:mx-auto">
           <a class="flex items-center gap-2 text-2xl max-sm:scale-90" href="/">
             <img
               src="../../public/tdl-logo.jpg"
@@ -62,7 +56,7 @@
             />
             Web A11y for Developers
           </a>
-        </div>
+        </h1>
 
         <ul
           class="flex flex-wrap gap-4 *:min-w-fit max-md:w-full max-md:justify-between max-sm:grid max-sm:grid-cols-2 max-sm:text-center"
@@ -75,10 +69,187 @@
       </nav>
     </header>
 
-    <main id="main-content" class="grid place-items-center">
-      <p class="text-center text-xl">
-        🚧 Components are under construction. Coming soon... 🚧
-      </p>
+    <main id="main-content">
+      <section class="container" aria-labelledby="accordion-component">
+        <h2 id="accordion-component" class="mb-2 text-xl font-semibold">
+          Accordion
+        </h2>
+
+        <p class="pb-4">
+          An expandable widget that shows <b>detailed information</b> when open
+          and a simple header when closed. We'll implement a simple Accordion
+          that <b>toggles on click</b> instead of on hover for example, but the
+          same logic can be extended for such use cases.
+        </p>
+
+        <div
+          class="mb-4 flex items-start justify-between *:max-w-[75ch] *:basis-full"
+        >
+          <div class="accordion">
+            <button
+              id="accordion-trigger-1"
+              aria-controls="accordion-panel-1"
+              aria-expanded="false"
+              class="accordion-trigger text-lg font-semibold"
+            >
+              "The Office": Fun facts
+            </button>
+            <div
+              role="region"
+              id="accordion-panel-1"
+              class="accordion-panel"
+              aria-labelledby="accordion-trigger-1"
+            >
+              <div class="accordion-panel-content [&_p]:my-0! space-y-4">
+                <div>
+                  <p class="font-semibold">
+                    It almost didn't make it past Season 1
+                  </p>
+                  The first season had low ratings, and NBC wasn't sure the show
+                  would survive. Season 2 is what really hooked audiences.
+                </div>
+
+                <div>
+                  <p class="font-semibold">Most reactions were real</p>
+                  Many awkward silences and glances weren't scripted - actors
+                  were reacting genuinely to what was happening.
+                </div>
+
+                <div>
+                  <p class="font-semibold">The Camera crew was a rule</p>
+                  The show followed strict documentary-style rules: no zooms, no
+                  fancy angles, and no characters acknowledging the camera (at
+                  first).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="grid place-items-center rounded-2xl border-2 border-dashed border-slate-600 p-2"
+          >
+            Let's build an Accordion from scratch here...
+          </div>
+        </div>
+
+        <section class="exercise" aria-labelledby="accordion-exercise">
+          <h3 id="accordion-exercise" class="text-xl font-semibold">
+            Homework: Accordion
+          </h3>
+
+          <p>
+            Tweak the accordion implementation to be able to
+            <b>close other open accordions when opening a given accordion</b>
+            such that only one can be open at a given time.
+          </p>
+
+          <div class="accordion-group space-y-2">
+            <div class="accordion">
+              <button
+                id="accordion-trigger-hw-1"
+                class="accordion-trigger"
+                aria-expanded="false"
+                aria-controls="accordion-panel-hw-1"
+              >
+                Accordion 1
+              </button>
+              <div
+                role="region"
+                id="accordion-panel-hw-1"
+                aria-labelledby="accordion-trigger-hw-1"
+                class="accordion-panel"
+              >
+                <div class="accordion-panel-content">
+                  This is Accordion 1's content. Make it work
+                  <b>only one at a time</b>.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <button
+                id="accordion-trigger-hw-2"
+                class="accordion-trigger"
+                aria-expanded="false"
+                aria-controls="accordion-panel-hw-2"
+              >
+                Accordion 2
+              </button>
+              <div
+                role="region"
+                id="accordion-panel-hw-2"
+                aria-labelledby="accordion-trigger-hw-2"
+                class="accordion-panel"
+              >
+                <div class="accordion-panel-content">
+                  This is Accordion 2's content. Make it work
+                  <b>only one at a time</b>.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <button
+                id="accordion-trigger-hw-3"
+                class="accordion-trigger"
+                aria-expanded="false"
+                aria-controls="accordion-panel-hw-3"
+              >
+                Accordion 3
+              </button>
+              <div
+                role="region"
+                id="accordion-panel-hw-3"
+                aria-labelledby="accordion-trigger-hw-3"
+                class="accordion-panel"
+              >
+                <div class="accordion-panel-content">
+                  This is Accordion 3's content. Make it work
+                  <b>only one at a time</b>.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <details class="mt-2 max-w-[80ch]">
+            <summary class="cursor-pointer pb-1">Bonus</summary>
+
+            <ol class="list-decimal space-y-2 *:ml-5">
+              <li>
+                How would you solve the <b>padding issue</b>?
+                <br />
+                The Accordion panel's content has some padding to look good with
+                a border around it. This makes that padding space be present
+                even when the panel is collapsed. How do we fix this without
+                causing janky animations?
+              </li>
+
+              <li>
+                Can you make the Accordion work on
+                <span class="code-span">:hover</span> and
+                <span class="code-span">:focus</span> instead of on
+                <span class="code-span">click</span> ?
+              </li>
+            </ol>
+          </details>
+        </section>
+      </section>
+
+      <hr />
+
+      <section class="container" aria-labelledby="tabs-component">
+        <h2 id="tabs-component" class="mb-2 text-xl font-semibold">Tabs</h2>
+
+        TODO
+      </section>
+
+      <hr />
+
+      <section class="container" aria-labelledby="modal-component">
+        <h2 id="modal-component" class="mb-2 text-xl font-semibold">Modal</h2>
+
+        TODO
+      </section>
     </main>
 
     <footer class="bg-slate-300/30 py-5 text-center">

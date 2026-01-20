@@ -62,6 +62,7 @@ code {
 .exercise {
   position: relative;
   width: fit-content;
+  max-width: 75ch;
   padding: 1rem;
   padding-left: calc(1rem + 8px);
   border-radius: 0.5rem;

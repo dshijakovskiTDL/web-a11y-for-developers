@@ -8,7 +8,7 @@
 
     <title>Web Accessibility for Developers | Best Practices</title>
 
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../styles/index.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,29 +29,20 @@
   </head>
 
   <body class="min-h-dvh">
-    <a
-      href="#main-content"
-      class="absolute! max-md:top-30 sr-only left-1/2 top-4 z-50 inline-block -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:h-auto focus-visible:outline-slate-900 max-lg:top-20 max-sm:top-40"
-    >
-      Skip to content
-    </a>
-
     <header
       class="sticky top-0 z-10 bg-slate-300/30 py-5 shadow-lg backdrop-blur-sm"
     >
-      <h1 class="max-md:mx-auto">
-        <a
-          href="#main-content"
-          class="absolute! p-2! sr-only left-1/2 top-4 z-50 -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:outline-slate-900"
-        >
-          Skip to content
-        </a>
-      </h1>
+      <a
+        href="#main-content"
+        class="absolute! p-2! sr-only left-1/2 top-4 z-50 -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:outline-slate-900"
+      >
+        Skip to content
+      </a>
 
       <nav
         class="container mx-auto flex items-center justify-between gap-4 max-md:flex-wrap"
       >
-        <div class="max-md:mx-auto">
+        <h1 class="max-md:mx-auto">
           <a class="flex items-center gap-2 text-2xl max-sm:scale-90" href="/">
             <img
               src="../../public/tdl-logo.jpg"
@@ -62,7 +53,7 @@
             />
             Web A11y for Developers
           </a>
-        </div>
+        </h1>
 
         <ul
           class="flex flex-wrap gap-4 *:min-w-fit max-md:w-full max-md:justify-between max-sm:grid max-sm:grid-cols-2 max-sm:text-center"
