@@ -38,7 +38,7 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
-a[aria-current='page'] {
+nav li a[aria-current='page'] {
   font-weight: 600;
   text-decoration: underline;
 }
