@@ -24,6 +24,10 @@ main {
   scroll-margin-block-start: 72px;
 }
 
+button {
+  cursor: pointer;
+}
+
 summary {
   cursor: pointer;
   padding: 0.5rem;
