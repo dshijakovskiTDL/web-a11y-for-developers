@@ -114,6 +114,10 @@ code {
   hr {
     margin-block: 2.5rem;
   }
+
+  .container {
+    padding-inline: 14px;
+  }
 }
 
 @media screen and (width < 640px) {

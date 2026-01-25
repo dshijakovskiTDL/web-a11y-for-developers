@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="../components/modal/style.css" />
     <script defer src="../components/modal/modal.js"></script>
 
-    <link rel="stylesheet" href="../components/modal/native-modal.css" />
-    <script defer src="../components/modal/native-modal.js"></script>
+    <link rel="stylesheet" href="../components/modal/native-modal/style.css" />
+    <script defer src="../components/modal/native-modal/native-modal.js"></script>
 
     <script defer>
       document.addEventListener('DOMContentLoaded', () => {
@@ -50,7 +50,7 @@
 
       <nav class="container mx-auto flex items-center justify-between gap-4 max-md:flex-wrap">
         <h1 class="max-md:mx-auto">
-          <a class="flex items-center gap-2 text-2xl max-sm:scale-90" href="/">
+          <a class="flex items-center gap-2 text-2xl" href="/">
             <img
               src="../../public/tdl-logo.jpg"
               width="30"
@@ -83,7 +83,9 @@
           hover for example, but the same logic can be extended for such use cases.
         </p>
 
-        <div class="mb-4 flex items-stretch justify-between *:max-w-[75ch] *:basis-full">
+        <div
+          class="mb-6 flex flex-wrap items-stretch justify-between gap-y-4 *:max-w-[75ch] *:basis-full"
+        >
           <div class="accordion">
             <button
               id="accordion-trigger-1"
@@ -237,7 +239,9 @@
           A collection of Tab buttons, each showing its own corresponding content underneath.
         </p>
 
-        <div class="mb-4 flex items-stretch justify-between *:max-w-[75ch] *:basis-full">
+        <div
+          class="mb-6 flex flex-wrap items-stretch justify-between gap-y-4 *:max-w-[75ch] *:basis-full"
+        >
           <!-- Note: This container is not needed for the component. -->
           <!-- It's just here to separate the Demo component and the build-from-scratch section -->
           <div class="tabs-container mb-4">
@@ -346,10 +350,14 @@
       <section class="container" aria-labelledby="modal-component">
         <h2 id="modal-component" class="mb-2 text-xl font-semibold">Modal</h2>
 
-        <div class="mb-4 flex items-stretch justify-between *:max-w-[75ch] *:basis-full">
+        <div
+          class="mb-6 flex flex-wrap items-stretch justify-between gap-y-4 *:max-w-[75ch] *:basis-full"
+        >
           <!-- Note: This container is not needed for the component. -->
           <!-- It's just here to separate the Demo component and the build-from-scratch section -->
-          <div class="modal-container space-x-2">
+          <div
+            class="modal-container flex items-center gap-6 max-lg:justify-center max-sm:justify-evenly"
+          >
             <button class="modal-trigger" aria-haspopup="dialog" data-modal="md-1">
               Open custom modal
             </button>
