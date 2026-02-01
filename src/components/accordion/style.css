@@ -1,13 +1,13 @@
 .accordion {
-  .accordion-trigger,
-  .accordion-trigger::after,
-  .accordion-panel,
-  .accordion-panel-content {
+  .trigger,
+  .trigger::after,
+  .panel,
+  .panel-content {
     transition-duration: 0.2s;
     transition-timing-function: ease;
   }
 
-  .accordion-trigger {
+  .trigger {
     position: relative;
     display: block;
     width: 100%;
@@ -16,7 +16,7 @@
     border-radius: 1rem;
     cursor: pointer;
     text-align: start;
-    font-weight: 600;
+    font-weight: 700;
     transition-property: color, background, border-color, border-radius;
 
     &::after {
@@ -57,14 +57,14 @@
     }
   }
 
-  .accordion-panel {
+  .panel {
     display: grid;
     overflow: hidden;
     grid-template-rows: 0fr;
     transition-property: grid-template-rows;
   }
 
-  .accordion-panel-content {
+  .panel-content {
     min-height: 0;
     padding: 0.5rem 1rem;
     border: 1px solid transparent;
@@ -74,12 +74,12 @@
   }
 }
 
-.accordion:has(.accordion-trigger[aria-expanded='true']) {
-  .accordion-panel {
+.accordion:has(.trigger[aria-expanded='true']) {
+  .panel {
     grid-template-rows: 1fr;
   }
 
-  .accordion-panel-content {
+  .panel-content {
     opacity: 1;
     visibility: visible;
     border-color: #888;

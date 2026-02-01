@@ -43,7 +43,7 @@
     <header class="sticky top-0 z-10 bg-slate-300/30 py-5 shadow-lg backdrop-blur-sm">
       <a
         href="#main-content"
-        class="absolute! max-md:top-30 sr-only left-1/2 top-4 z-50 inline-block -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:h-auto focus-visible:outline-slate-900 max-lg:top-20 max-sm:top-40"
+        class="absolute! outline-offset-0! max-md:top-30 focus-visible:p-1.5! sr-only left-1/2 top-4 z-50 inline-block -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:h-auto focus-visible:outline-slate-900 max-lg:top-20 max-lg:bg-white max-sm:top-40"
       >
         Skip to content
       </a>
@@ -87,21 +87,12 @@
           class="mb-6 flex flex-wrap items-stretch justify-between gap-y-4 *:max-w-[75ch] *:basis-full"
         >
           <div class="accordion">
-            <button
-              id="accordion-trigger-1"
-              aria-controls="accordion-panel-1"
-              aria-expanded="false"
-              class="accordion-trigger font-semibold"
-            >
+            <button id="acc-trigger" aria-controls="acc-panel" aria-expanded="true" class="trigger">
               "The Office": Fun facts
             </button>
-            <div
-              role="region"
-              id="accordion-panel-1"
-              class="accordion-panel"
-              aria-labelledby="accordion-trigger-1"
-            >
-              <div class="accordion-panel-content [&_p]:my-0! space-y-4">
+
+            <div role="region" id="acc-panel" class="panel" aria-labelledby="acc-trigger">
+              <div class="panel-content [&_p]:my-0! space-y-4">
                 <div>
                   <p class="font-semibold">It almost didn't make it past Season 1</p>
                   The first season had low ratings, and NBC wasn't sure the show would survive.
@@ -134,28 +125,24 @@
           <h3 id="accordion-exercise" class="text-xl font-semibold">Homework: Accordion</h3>
 
           <p class="pb-4">
-            Tweak the accordion implementation to be able to
-            <b>close other open accordions when opening a given accordion</b>
+            Tweak the Accordion implementation to be able to
+            <b>close other open Accordions when opening another Accordion</b>
             such that only one can be open at a given time.
           </p>
 
           <div class="accordion-group space-y-2">
             <div class="accordion">
               <button
-                id="accordion-trigger-hw-1"
-                class="accordion-trigger"
+                id="trigger-hw-1"
+                class="trigger"
                 aria-expanded="false"
-                aria-controls="accordion-panel-hw-1"
+                aria-controls="panel-hw-1"
               >
                 Accordion 1
               </button>
-              <div
-                role="region"
-                id="accordion-panel-hw-1"
-                aria-labelledby="accordion-trigger-hw-1"
-                class="accordion-panel"
-              >
-                <div class="accordion-panel-content">
+
+              <div role="region" id="panel-hw-1" aria-labelledby="trigger-hw-1" class="panel">
+                <div class="panel-content">
                   This is Accordion 1's content. Make it work
                   <b>only one at a time</b>.
                 </div>
@@ -164,20 +151,16 @@
 
             <div class="accordion">
               <button
-                id="accordion-trigger-hw-2"
-                class="accordion-trigger"
+                id="trigger-hw-2"
+                class="trigger"
                 aria-expanded="false"
-                aria-controls="accordion-panel-hw-2"
+                aria-controls="panel-hw-2"
               >
                 Accordion 2
               </button>
-              <div
-                role="region"
-                id="accordion-panel-hw-2"
-                aria-labelledby="accordion-trigger-hw-2"
-                class="accordion-panel"
-              >
-                <div class="accordion-panel-content">
+
+              <div role="region" id="panel-hw-2" aria-labelledby="trigger-hw-2" class="panel">
+                <div class="panel-content">
                   This is Accordion 2's content. Make it work
                   <b>only one at a time</b>.
                 </div>
@@ -186,20 +169,16 @@
 
             <div class="accordion">
               <button
-                id="accordion-trigger-hw-3"
-                class="accordion-trigger"
+                id="trigger-hw-3"
+                class="trigger"
                 aria-expanded="false"
-                aria-controls="accordion-panel-hw-3"
+                aria-controls="panel-hw-3"
               >
                 Accordion 3
               </button>
-              <div
-                role="region"
-                id="accordion-panel-hw-3"
-                aria-labelledby="accordion-trigger-hw-3"
-                class="accordion-panel"
-              >
-                <div class="accordion-panel-content">
+
+              <div role="region" id="panel-hw-3" aria-labelledby="trigger-hw-3" class="panel">
+                <div class="panel-content">
                   This is Accordion 3's content. Make it work
                   <b>only one at a time</b>.
                 </div>
@@ -377,6 +356,7 @@
 
                 <div class="space-y-4">
                   <div>This is some content inside the modal</div>
+
                   <input
                     type="email"
                     name="email"
@@ -389,6 +369,7 @@
                     <a href="#" aria-label="Click here to see more about our amazing Modal">
                       See more
                     </a>
+
                     <a href="#" aria-label="Click here to see less about our amazing Modal">
                       See less
                     </a>
@@ -409,6 +390,7 @@
 
               <div class="space-y-4">
                 <div>This is some content inside the modal</div>
+
                 <input
                   type="email"
                   name="email"
@@ -422,6 +404,7 @@
                   <a href="#" aria-label="Click here to see more about our amazing Modal">
                     See more
                   </a>
+
                   <a href="#" aria-label="Click here to see less about our amazing Modal">
                     See less
                   </a>
@@ -462,6 +445,7 @@
 
                 <div class="space-y-4">
                   <div>This Modal is very broken, please fix it!</div>
+
                   <input
                     type="email"
                     name="email"
@@ -469,10 +453,12 @@
                     placeholder="Your email here..."
                     class="block w-fit rounded-md border border-slate-700 px-2 py-1.5"
                   />
+
                   <div class="space-x-2 *:text-blue-700 *:underline">
                     <a href="#" aria-label="Click here to see more about our amazing Modal">
                       See more
                     </a>
+
                     <a href="#" aria-label="Click here to see less about our amazing Modal">
                       See less
                     </a>

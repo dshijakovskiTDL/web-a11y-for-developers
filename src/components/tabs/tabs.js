@@ -36,8 +36,6 @@ function toggleTab(tab, active) {
   tab.setAttribute('aria-selected', String(active));
   tab.setAttribute('tabindex', active ? '0' : '-1');
 
-  if (active) tab.focus();
-
   // ? Toggle the corresponding tab panel
   const panel = document.getElementById(tab.getAttribute('aria-controls'));
   panel.classList.toggle('hidden', !active);

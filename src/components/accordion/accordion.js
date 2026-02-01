@@ -1,9 +1,9 @@
 const accordions = document.querySelectorAll('.accordion');
 
 accordions.forEach((accordion) => {
-  const triggerButton = accordion.querySelector('.accordion-trigger');
+  const triggerButton = accordion.querySelector('.trigger');
 
-  triggerButton.addEventListener('click', () => {
+  triggerButton?.addEventListener('click', () => {
     toggleAccordion(triggerButton);
   });
 });
