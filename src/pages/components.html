@@ -6,7 +6,7 @@
 
     <link rel="icon" type="image/jpeg" href="../../public/tdl-logo.jpg" />
 
-    <title>Web Accessibility for Developers | Components</title>
+    <title>Web A11y for Devs | Components</title>
 
     <link rel="stylesheet" href="../styles/index.css" />
 
@@ -20,6 +20,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#current-year').textContent = new Date().getFullYear();
+      });
+    </script>
+
+    <!-- Page specific assets: Components -->
     <link rel="stylesheet" href="../components/accordion/style.css" />
     <script defer src="../components/accordion/accordion.js"></script>
 
@@ -31,16 +38,10 @@
 
     <link rel="stylesheet" href="../components/modal/native-modal/style.css" />
     <script defer src="../components/modal/native-modal/native-modal.js"></script>
-
-    <script defer>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelector('#current-year').textContent = new Date().getFullYear();
-      });
-    </script>
   </head>
 
   <body class="min-h-dvh">
-    <header class="sticky top-0 z-10 bg-slate-300/30 py-5 shadow-lg backdrop-blur-sm">
+    <header class="sticky top-0 z-10 bg-slate-300/30 py-3 shadow-lg backdrop-blur-sm">
       <a
         href="#main-content"
         class="absolute! outline-offset-0! max-md:top-30 focus-visible:p-1.5! sr-only left-1/2 top-4 z-50 inline-block -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:h-auto focus-visible:outline-slate-900 max-lg:top-20 max-lg:bg-white max-sm:top-40"
@@ -48,7 +49,9 @@
         Skip to content
       </a>
 
-      <nav class="container mx-auto flex items-center justify-between gap-4 max-md:flex-wrap">
+      <nav
+        class="container mx-auto flex items-center justify-between gap-4 max-md:flex-wrap [&_a]:p-2"
+      >
         <h1 class="max-md:mx-auto">
           <a class="flex items-center gap-2 text-2xl" href="/">
             <img
@@ -58,16 +61,16 @@
               class="inline rounded-full"
               alt="TestDevLab"
             />
-            Web A11y for Developers
+            Web A11y for Devs
           </a>
         </h1>
 
         <ul
-          class="flex flex-wrap gap-4 *:min-w-fit max-md:w-full max-md:justify-between max-sm:grid max-sm:grid-cols-2 max-sm:text-center"
+          class="flex flex-wrap gap-2 *:min-w-fit max-md:w-full max-md:justify-between max-sm:grid max-sm:grid-cols-2 max-sm:text-center"
         >
+          <li><a href="./common-pitfalls">Pitfalls</a></li>
           <li><a href="./components" aria-current="page">Components</a></li>
           <li><a href="./forms">Forms</a></li>
-          <li><a href="./best-practices">Best Practices</a></li>
           <li><a href="./tips-tricks">Tips & tricks</a></li>
         </ul>
       </nav>
@@ -186,25 +189,12 @@
             </div>
           </div>
 
-          <details class="mt-2 max-w-[80ch]">
+          <details class="mt-2 max-w-[80ch] [&::details-content]:pl-5">
             <summary>Bonus</summary>
 
-            <ol class="list-decimal space-y-2 *:ml-5">
-              <li>
-                How would you solve the <b>padding issue</b>?
-                <br />
-                The Accordion panel's content has some padding to look good with a border around it.
-                This makes that padding space be present even when the panel is collapsed. How do we
-                fix this without causing janky animations?
-              </li>
-
-              <li>
-                Can you make the Accordion work on
-                <span class="code-span">:hover</span> and
-                <span class="code-span">:focus</span> instead of on
-                <span class="code-span">click</span> ?
-              </li>
-            </ol>
+            Can you make the Accordion work on
+            <span class="code-span">:hover</span> and <span class="code-span">:focus</span> instead
+            of on <span class="code-span">click</span> ?
           </details>
         </section>
       </section>
@@ -472,7 +462,7 @@
     </main>
 
     <footer class="bg-slate-300/30 py-5 text-center">
-      <p>Web A11y for Developers, <span id="current-year">2026</span></p>
+      <p>Web A11y for Devs, <span id="current-year">2026</span></p>
     </footer>
   </body>
 </html>
