@@ -41,13 +41,8 @@
   </head>
 
   <body class="min-h-dvh">
-    <header class="sticky top-0 z-10 bg-slate-300/30 py-3 shadow-lg backdrop-blur-sm">
-      <a
-        href="#main-content"
-        class="absolute! outline-offset-0! max-md:top-30 focus-visible:p-1.5! sr-only left-1/2 top-4 z-50 inline-block -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:h-auto focus-visible:outline-slate-900 max-lg:top-20 max-lg:bg-white max-sm:top-40"
-      >
-        Skip to content
-      </a>
+    <header class="sticky top-0 z-10 py-3">
+      <a href="#main-content" class="skip-link">Skip to content</a>
 
       <nav
         class="container mx-auto flex items-center justify-between gap-4 max-md:flex-wrap [&_a]:p-2"
@@ -58,7 +53,7 @@
               src="../../public/tdl-logo.jpg"
               width="30"
               height="30"
-              class="inline rounded-full"
+              class="inline rounded-full shadow-md"
               alt="TestDevLab"
             />
             Web A11y for Devs
@@ -66,19 +61,21 @@
         </h1>
 
         <ul
-          class="flex flex-wrap gap-2 *:min-w-fit max-md:w-full max-md:justify-between max-sm:grid max-sm:grid-cols-2 max-sm:text-center"
+          class="flex flex-wrap gap-2 *:min-w-fit max-md:w-full max-md:justify-evenly max-sm:text-center"
         >
-          <li><a href="./common-pitfalls">Pitfalls</a></li>
-          <li><a href="./components" aria-current="page">Components</a></li>
+          <li><a href="./introduction">Introduction</a></li>
+          <li>
+            <a href="./components" aria-current="page">Components</a>
+          </li>
           <li><a href="./forms">Forms</a></li>
           <li><a href="./tips-tricks">Tips & tricks</a></li>
         </ul>
       </nav>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <section class="container" aria-labelledby="accordion-component">
-        <h2 id="accordion-component" class="mb-2 text-xl font-semibold">Accordion</h2>
+        <h2 id="accordion-component">Accordion</h2>
 
         <p class="pb-4">
           An expandable widget that shows <b>detailed information</b> when open and a simple header
@@ -124,8 +121,8 @@
           </div>
         </div>
 
-        <section class="exercise" aria-labelledby="accordion-exercise">
-          <h3 id="accordion-exercise" class="text-xl font-semibold">Homework: Accordion</h3>
+        <section class="exercise shadow-md" aria-labelledby="accordion-exercise">
+          <h3 id="accordion-exercise">Homework: Accordion</h3>
 
           <p class="pb-4">
             Tweak the Accordion implementation to be able to
@@ -202,7 +199,7 @@
       <hr />
 
       <section class="container" aria-labelledby="tabs-component">
-        <h2 id="tabs-component" class="mb-2 text-xl font-semibold">Tabs</h2>
+        <h2 id="tabs-component">Tabs</h2>
 
         <p class="pb-4">
           A collection of Tab buttons, each showing its own corresponding content underneath.
@@ -297,10 +294,10 @@
           </div>
         </div>
 
-        <section class="exercise" aria-labelledby="tabs-exercise">
-          <h3 id="tabs-exercise" class="text-xl font-semibold">Homework: Tabs</h3>
+        <section class="exercise shadow-md" aria-labelledby="tabs-exercise">
+          <h3 id="tabs-exercise">Homework: Tabs</h3>
 
-          <ol class="list-decimal space-y-2 py-4 *:ml-5">
+          <ol class="list-decimal space-y-2 py-4 *:ml-6">
             <li>
               Try to add the ability for a Tab to be <b>disabled</b>. How would that affect the
               keyboard navigation handling (roving tabindex)?
@@ -311,13 +308,21 @@
               show/hide logic for this to work?
             </li>
           </ol>
+
+          <details class="max-w-[80ch] [&::details-content]:pl-5">
+            <summary>Bonus</summary>
+
+            How would you handle <b>changing the direction</b> of the Tab buttons, when the
+            <b>viewport cannot support horizontal Tabs</b> and you have to switch to a vertical
+            layout?
+          </details>
         </section>
       </section>
 
       <hr />
 
       <section class="container" aria-labelledby="modal-component">
-        <h2 id="modal-component" class="mb-2 text-xl font-semibold">Modal</h2>
+        <h2 id="modal-component">Modal</h2>
 
         <div
           class="mb-6 flex flex-wrap items-stretch justify-between gap-y-4 *:max-w-[75ch] *:basis-full"
@@ -340,12 +345,12 @@
                 tabindex="-1"
               >
                 <div class="mb-4 flex items-center justify-between gap-2">
-                  <h3 id="md-1-title" class="text-xl font-semibold">Modal title</h3>
+                  <h3 id="md-1-title">Modal title</h3>
                   <button aria-label="Close Modal" data-dismiss>⨉</button>
                 </div>
 
                 <div class="space-y-4">
-                  <div>This is some content inside the modal</div>
+                  <div>This is some content inside the Modal. Keep it short and too the point.</div>
 
                   <input
                     type="email"
@@ -374,12 +379,12 @@
 
             <dialog id="native-md-1" aria-labelledby="native-md-1-title">
               <div class="mb-4 flex items-center justify-between gap-2">
-                <h3 id="native-md-1-title" class="text-xl font-semibold">Modal title</h3>
+                <h3 id="native-md-1-title">Modal title</h3>
                 <button aria-label="Close Modal" data-dismiss>⨉</button>
               </div>
 
               <div class="space-y-4">
-                <div>This is some content inside the modal</div>
+                <div>This is some content inside the Modal. Keep it short and too the point.</div>
 
                 <input
                   type="email"
@@ -387,7 +392,7 @@
                   autofocus
                   autocomplete="email"
                   placeholder="Your email here..."
-                  class="block w-fit rounded-md border border-slate-700 px-2 py-1.5"
+                  class="block rounded-md border border-slate-700 px-2 py-1.5"
                 />
 
                 <div class="space-x-2 *:text-blue-700 *:underline">
@@ -406,12 +411,12 @@
           <div
             class="grid place-items-center rounded-2xl border-2 border-dashed border-slate-600 p-2"
           >
-            Let's build some Modals from scratch here...
+            Let's build a Modal from scratch here...
           </div>
         </div>
 
-        <section class="exercise" aria-labelledby="modal-exercise">
-          <h3 id="modal-exercise" class="text-xl font-semibold">Homework: Modal</h3>
+        <section class="exercise shadow-md" aria-labelledby="modal-exercise">
+          <h3 id="modal-exercise">Homework: Modal</h3>
 
           <p class="pb-4">
             Try to fix everything wrong with the <b>custom Modal implementation</b> below.
@@ -461,8 +466,8 @@
       </section>
     </main>
 
-    <footer class="bg-slate-300/30 py-5 text-center">
-      <p>Web A11y for Devs, <span id="current-year">2026</span></p>
+    <footer class="py-3 text-center font-semibold">
+      <p>Web A11y for Devs, <span id="current-year"></span></p>
     </footer>
   </body>
 </html>

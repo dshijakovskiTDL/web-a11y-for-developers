@@ -1,4 +1,6 @@
 .accordion {
+  --border-col: #888;
+
   .trigger,
   .trigger::after,
   .panel,
@@ -12,7 +14,7 @@
     display: block;
     width: 100%;
     padding: 0.5rem 1rem;
-    border: 1px solid #888;
+    border: 1px solid var(--border-col);
     border-radius: 1rem;
     cursor: pointer;
     text-align: start;
@@ -38,8 +40,8 @@
 
     &:hover,
     &:focus-visible {
-      background: rgb(65, 65, 212);
-      border-color: rgb(65, 65, 212);
+      background: var(--brand-secondary);
+      border-color: var(--brand-secondary);
       outline: none;
       color: white;
 
@@ -49,7 +51,7 @@
     }
 
     &:focus-visible {
-      outline: 2px solid rgb(65, 65, 212);
+      outline: 2px solid var(--brand-secondary);
       outline-offset: 2px;
     }
 
@@ -89,7 +91,7 @@
   .panel-content {
     opacity: 1;
     visibility: visible;
-    border-color: #888;
+    border-color: var(--border-col);
     border-top-color: transparent;
     padding: 0.5rem 1rem;
   }

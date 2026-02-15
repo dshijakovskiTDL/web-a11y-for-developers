@@ -30,13 +30,8 @@
   </head>
 
   <body class="min-h-dvh">
-    <header class="sticky top-0 z-10 bg-slate-300/30 py-3 shadow-lg backdrop-blur-sm">
-      <a
-        href="#main-content"
-        class="absolute! outline-offset-0! max-md:top-30 focus-visible:p-1.5! sr-only left-1/2 top-4 z-50 inline-block -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:h-auto focus-visible:outline-slate-900 max-lg:top-20 max-lg:bg-white max-sm:top-40"
-      >
-        Skip to content
-      </a>
+    <header class="sticky top-0 z-10 py-3">
+      <a href="#main-content" class="skip-link">Skip to content</a>
 
       <nav
         class="container mx-auto flex items-center justify-between gap-4 max-md:flex-wrap [&_a]:p-2"
@@ -47,7 +42,7 @@
               src="../../public/tdl-logo.jpg"
               width="30"
               height="30"
-              class="inline rounded-full"
+              class="inline rounded-full shadow-md"
               alt="TestDevLab"
             />
             Web A11y for Devs
@@ -57,7 +52,7 @@
         <ul
           class="flex flex-wrap gap-2 *:min-w-fit max-md:w-full max-md:justify-between max-sm:grid max-sm:grid-cols-2 max-sm:text-center"
         >
-          <li><a href="./common-pitfalls">Pitfalls</a></li>
+          <li><a href="./introduction">Introduction</a></li>
           <li><a href="./components">Components</a></li>
           <li><a href="./forms">Forms</a></li>
           <li><a href="./tips-tricks" aria-current="page">Tips & tricks</a></li>
@@ -65,12 +60,12 @@
       </nav>
     </header>
 
-    <main id="main-content" class="grid place-items-center">
+    <main id="main-content" class="grid place-items-center" tabindex="-1">
       <p class="text-center text-xl">🚧 Tips & Tricks are under construction. Coming soon... 🚧</p>
     </main>
 
-    <footer class="bg-slate-300/30 py-5 text-center">
-      <p>Web A11y for Devs, <span id="current-year">2026</span></p>
+    <footer class="py-3 text-center font-semibold">
+      <p>Web A11y for Devs, <span id="current-year"></span></p>
     </footer>
   </body>
 </html>

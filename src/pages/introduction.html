@@ -31,13 +31,8 @@
   </head>
 
   <body class="min-h-dvh">
-    <header class="sticky top-0 z-10 bg-slate-300/30 py-3 shadow-lg backdrop-blur-sm">
-      <a
-        href="#main-content"
-        class="absolute! outline-offset-0! max-md:top-30 focus-visible:p-1.5! sr-only left-1/2 top-4 z-50 inline-block -translate-x-1/2 rounded-lg focus-visible:not-sr-only focus-visible:h-auto focus-visible:outline-slate-900 max-lg:top-20 max-lg:bg-white max-sm:top-40"
-      >
-        Skip to content
-      </a>
+    <header class="sticky top-0 z-10 py-3">
+      <a href="#main-content" class="skip-link">Skip to content</a>
 
       <nav
         class="container mx-auto flex items-center justify-between gap-4 max-md:flex-wrap [&_a]:p-2"
@@ -48,7 +43,7 @@
               src="../../public/tdl-logo.jpg"
               width="30"
               height="30"
-              class="inline rounded-full"
+              class="inline rounded-full shadow-md"
               alt="TestDevLab"
             />
             Web A11y for Devs
@@ -58,7 +53,7 @@
         <ul
           class="flex flex-wrap gap-2 *:min-w-fit max-md:w-full max-md:justify-between max-sm:grid max-sm:grid-cols-2 max-sm:text-center"
         >
-          <li><a href="./common-pitfalls" aria-current="page">Pitfalls</a></li>
+          <li><a href="./introduction" aria-current="page">Introduction</a></li>
           <li><a href="./components">Components</a></li>
           <li><a href="./forms">Forms</a></li>
           <li><a href="./tips-tricks">Tips & tricks</a></li>
@@ -66,9 +61,85 @@
       </nav>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
+      <section class="container" aria-labelledby="screen-readers">
+        <h2 id="screen-readers">Screen readers</h2>
+
+        <p>
+          Screen readers are hardware and software technologies that
+          <b>parse the content of any application</b> and read it out loud using
+          <b>text-to-speech</b>.
+        </p>
+
+        <p>Download and try out a Screen reader compatible with your OS:</p>
+
+        <ul class="list-disc space-y-1 *:ml-6">
+          <li>
+            Windows: <a href="https://www.nvaccess.org/download/" target="_blank">NVDA</a>,
+            <a href="https://support.freedomscientific.com/Downloads/JAWS" target="_blank">JAWS</a>
+            and
+            <a
+              href="https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1"
+              target="_blank"
+              >Narrator (built-in)</a
+            >
+          </li>
+          <li>
+            macOS:
+            <a href="https://support.apple.com/en-mk/guide/voiceover/welcome/mac" target="_blank"
+              >VoiceOver (built-in)</a
+            >
+          </li>
+          <li>Linux: <a href="https://orca.gnome.org/" target="_blank">Orca</a></li>
+          <li>
+            Mobile:
+            <a
+              href="https://support.google.com/accessibility/android/answer/6283677"
+              target="_blank"
+              >TalkBack</a
+            >
+            on Android,
+            <a href="https://support.apple.com/en-mk/guide/iphone/iph3e2e415f/ios" target="_blank"
+              >VoiceOver</a
+            >
+            on iOS
+          </li>
+        </ul>
+
+        <br />
+
+        <h3>Commands & Cheat sheets</h3>
+
+        <p class="mb-8!">
+          Every Screen reader has different keyboard shortcuts and commands it uses to operate.
+          <br />
+          Check out these
+          <a href="https://dequeuniversity.com/screenreaders/" target="_blank"
+            >Screen reader cheat sheets</a
+          >
+          to see the useful keyboard commands at your disposal.
+        </p>
+
+        <section class="exercise shadow-md" aria-labelledby="exercise-0">
+          <h3 id="exercise-0">Exercise 0</h3>
+
+          <p>
+            Explore this website (or any other of your choosing) using a Screen reader.
+            <br />
+            Make note of how it announces different pieces of UI and content.
+          </p>
+        </section>
+      </section>
+
+      <hr />
+
+      <div class="container">
+        <h2 class="text-2xl font-semibold">Common Pitfalls</h2>
+        <br />
+      </div>
+
       <section class="container" aria-labelledby="reduced-motion">
-        <h2 id="reduced-motion" class="mb-2 text-xl font-semibold">Animation & Reduced motion</h2>
+        <h3 id="reduced-motion">Animation & Reduced motion</h3>
 
         <p>
           Animations can be quite distracting to
@@ -88,7 +159,7 @@
         <br />
 
         <section class="exercise shadow-md" aria-labelledby="exercise-1">
-          <h3 id="exercise-1" class="text-xl font-semibold">Exercise 1 (Demo)</h3>
+          <h3 id="exercise-1">Exercise 1</h3>
 
           <p class="pb-4">
             Utilize the CSS <b>prefers-reduced-motion</b> media query to disable the animation on
@@ -106,12 +177,11 @@
         </section>
       </section>
 
-      <hr />
+      <br />
+      <br />
 
       <section class="container" aria-labelledby="missing-indicators">
-        <h2 id="missing-indicators" class="mb-2 text-xl font-semibold">
-          (Missing) Focus Indicators
-        </h2>
+        <h3 id="missing-indicators">(Missing) Focus Indicators</h3>
 
         <p>
           Any interactive element must have a <b>focus indicator</b> to let (keyboard-only) users
@@ -148,10 +218,11 @@
         </p>
       </section>
 
-      <hr />
+      <br />
+      <br />
 
       <section class="container" aria-labelledby="custom-buttons">
-        <h2 id="custom-buttons" class="mb-2 text-xl font-semibold">Custom buttons</h2>
+        <h3 id="custom-buttons">Custom buttons</h3>
 
         <p>
           We always want to prefer <b>native implementations</b> over custom ones if we can help it
@@ -166,7 +237,7 @@
           A native button gives us all necessary and accessible features we expect - out of the box:
         </p>
 
-        <ul class="list-disc *:ml-8">
+        <ul class="list-disc space-y-1 *:ml-6">
           <li>Proper semantic role: "button"</li>
           <li>
             Accessible keyboard controls - <kbd>Enter</kbd> & <kbd>Space</kbd> keys activate the
@@ -181,10 +252,10 @@
         <br />
 
         <section class="exercise shadow-md" aria-labelledby="exercise-2">
-          <h3 id="exercise-2" class="text-xl font-semibold">Exercise 2</h3>
+          <h3 id="exercise-2">Exercise 2</h3>
 
           <p class="pb-4">
-            Convert this generic <span class="code-span">div</span> element into a fully functioning
+            Convert the <span class="code-span">div</span> element below into a fully functioning
             button element.
             <br />
             Check out exercise
@@ -195,10 +266,11 @@
         </section>
       </section>
 
-      <hr />
+      <br />
+      <br />
 
       <section class="container" aria-labelledby="landmark-elements">
-        <h2 id="landmark-elements" class="mb-2 text-xl font-semibold">Landmark elements</h2>
+        <h3 id="landmark-elements">Landmark elements</h3>
 
         <p>
           We always want to make sure we are using
@@ -215,22 +287,21 @@
         <br />
 
         <section class="exercise shadow-md" aria-labelledby="exercise-3">
-          <h3 id="exercise-3" class="text-xl font-semibold">Exercise 3 (Homework)</h3>
+          <h3 id="exercise-3">Exercise 3 (Homework)</h3>
 
           <p>
             Navigate to the secret
-            <a href="./broken-landmarks">
+            <a href="./broken-landmarks" class="!no-underline">
               <span class="code-span text-blue-800 underline">/broken-landmarks</span>
             </a>
-            page and fix all of the
-            <b>landmark element related issues</b> that you can find.
+            page and fix all of the <b>landmark element related issues</b> that you can find.
           </p>
         </section>
       </section>
     </main>
 
-    <footer class="bg-slate-300/30 py-5 text-center">
-      <p>Web A11y for Devs, <span id="current-year">2026</span></p>
+    <footer class="py-3 text-center font-semibold">
+      <p>Web A11y for Devs, <span id="current-year"></span></p>
     </footer>
   </body>
 </html>
