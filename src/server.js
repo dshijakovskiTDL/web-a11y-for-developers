@@ -5,21 +5,6 @@ const PORT = process.env.PORT || 3000;
 const srcDir = import.meta.dir; // src directory
 const rootDir = join(srcDir, '..'); // project root
 
-// MIME types for common file extensions
-const mimeTypes = {
-  '.html': 'text/html',
-  '.css': 'text/css',
-  '.js': 'text/javascript',
-  '.json': 'application/json',
-  '.png': 'image/png',
-  '.jpg': 'image/jpeg',
-  '.jpeg': 'image/jpeg',
-  '.gif': 'image/gif',
-  '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon',
-  '.webp': 'image/webp',
-};
-
 serve({
   port: PORT,
   async fetch(req) {
@@ -57,15 +42,7 @@ serve({
         return new Response('Not Found', { status: 404 });
       }
 
-      // Get the correct MIME type
-      const ext = extname(fullPath);
-      const mimeType = mimeTypes[ext] || 'application/octet-stream';
-
-      return new Response(file, {
-        headers: {
-          'Content-Type': mimeType,
-        },
-      });
+      return new Response(file);
     } catch (error) {
       console.error('Error serving file:', error);
       return new Response('Internal Server Error', { status: 500 });
