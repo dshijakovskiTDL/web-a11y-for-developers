@@ -421,7 +421,7 @@
         </div>
 
         <section class="exercise shadow-md" aria-labelledby="modal-exercise">
-          <h3 id="modal-exercise">Homework: Modal</h3>
+          <h3 id="modal-exercise">Homework: Modal ✅</h3>
 
           <p class="pb-4">
             Try to fix everything wrong with the <b>custom Modal implementation</b> below.
@@ -431,17 +431,23 @@
           </p>
 
           <div class="modal-container">
-            <div class="modal-trigger" data-broken-modal="broken-md-1">Open Modal</div>
+            <button class="modal-trigger" data-modal="broken-md-1">Open Modal</button>
 
             <div class="modal-backdrop hidden">
-              <div id="broken-md-1">
-                <div class="flex items-center justify-between gap-4">
-                  <h1>This is a broken title</h1>
-                  <div>⨉</div>
+              <div
+                id="broken-md-1"
+                role="dialog"
+                aria-modal="true"
+                tabindex="-1"
+                aria-labelledby="broken-md-title"
+              >
+                <div class="mb-4 flex items-center justify-between gap-4">
+                  <h1 class="text-lg font-semibold" id="broken-md-title">This is a broken title</h1>
+                  <button data-dismiss aria-label="Close the Modal">⨉</button>
                 </div>
 
                 <div class="space-y-4">
-                  <div>This Modal is very broken, please fix it!</div>
+                  <div>There, this Modal is now working correctly! Great success 👍👍</div>
 
                   <input
                     type="email"
