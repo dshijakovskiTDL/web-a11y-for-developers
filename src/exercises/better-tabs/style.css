@@ -2,8 +2,9 @@
 /* Try to add some reasonable spacing, typography etc. */
 
 [role='tab']:disabled {
-  background-color: #aaa !important;
-  border-color: #aaa;
+  background-color: hsl(from var(--brand-slate) h s 90%);
+  border-color: hsl(from var(--brand-slate) h s 80%);
+  color: hsl(from var(--brand-slate) h s 20%);
   cursor: default;
   pointer-events: none;
 }
