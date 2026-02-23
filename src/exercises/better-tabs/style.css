@@ -1,2 +1,37 @@
-/* TODO: Add some styles to animate the toggling of the Tabs */
-/* TODO: Try to add some reasonable spacing, typography etc. */
+/* Add some styles to animate the toggling of the Tabs */
+/* Try to add some reasonable spacing, typography etc. */
+
+[role='tab']:disabled {
+  background-color: #aaa !important;
+  border-color: #aaa;
+  cursor: default;
+  pointer-events: none;
+}
+
+.tab-panels {
+  display: grid;
+  grid-template-areas: 'panel';
+}
+
+/* Animating tabs using `visibility` instead of `display` */
+[role='tabpanel'] {
+  grid-area: panel;
+
+  transition:
+    visibility 0.3s ease,
+    translate 0.3s ease,
+    opacity 0.6s ease;
+
+  transition-behavior: allow-discrete;
+
+  opacity: 1;
+  visibility: visible;
+
+  &.invisible {
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 15px;
+
+    transition-duration: 0.1s;
+  }
+}
