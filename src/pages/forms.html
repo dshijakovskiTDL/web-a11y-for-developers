@@ -206,7 +206,7 @@
         class="container relative mb-4 flex items-stretch gap-4 *:max-w-[75ch] max-2xl:block max-2xl:space-y-8"
       >
         <section class="exercise w-full! shadow-md" aria-labelledby="labeling-exercise">
-          <h3 id="labeling-exercise">Homework: Form labeling</h3>
+          <h3 id="labeling-exercise">Homework: Form labeling ✅</h3>
 
           <p>
             Fix the labeling of the <b>form on the right</b>. Make sure to be on the lookout for
@@ -232,34 +232,42 @@
 
             <form class="grid grid-cols-2 items-start gap-6 max-lg:block max-lg:space-y-2">
               <div class="form-control">
-                <span>Name</span>
-                <input type="text" placeholder="Name here..." />
+                <label for="register-name">Name</label>
+                <input id="register-name" type="text" placeholder="Name here..." />
               </div>
 
               <div class="form-control">
-                <span>Email</span>
-                <input type="email" placeholder="Email here..." />
+                <label for="register-email">Email</label>
+                <input id="register-email" type="email" placeholder="Email here..." />
               </div>
 
               <div class="form-control">
-                <label for="pwd">Password</label>
-                <input id="password" type="password" placeholder="Your password please..." />
-                <span class="inline-block w-full text-end text-sm leading-tight"
-                  >Must contain at least 8 characters/digits.</span
-                >
-              </div>
-
-              <div class="form-control">
-                <label for="pwd">Confirm password</label>
+                <label for="register-pwd">Password</label>
                 <input
-                  id="confirm-password"
+                  id="register-pwd"
+                  type="password"
+                  placeholder="Your password please..."
+                  aria-describedby="register-pwd-hint"
+                />
+                <span
+                  id="register-pwd-hint"
+                  class="inline-block w-full text-end text-sm leading-tight"
+                >
+                  Must contain at least 8 characters/digits.
+                </span>
+              </div>
+
+              <div class="form-control">
+                <label for="register-confirm-pwd">Confirm password</label>
+                <input
+                  id="register-confirm-pwd"
                   type="password"
                   placeholder="Confirm your password..."
                 />
               </div>
 
-              <div role="group" class="col-span-full pt-2">
-                <p class="font-semibold">Home Address</p>
+              <div role="group" aria-labelledby="register-address" class="col-span-full pt-2">
+                <p id="register-address" class="font-semibold">Home Address</p>
 
                 <div class="grid grid-cols-2 gap-6 max-lg:block max-lg:space-y-4">
                   <div class="form-control">
@@ -319,7 +327,8 @@
               id="email-error"
               aria-live="polite"
               class="absolute block w-full text-end text-sm font-semibold text-red-600"
-            ></span>
+            >
+            </span>
           </div>
 
           <div class="relative">
