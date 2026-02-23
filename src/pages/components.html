@@ -35,6 +35,9 @@
     <link rel="stylesheet" href="../components/tabs/style.css" />
     <script defer src="../components/tabs/tabs.js"></script>
 
+    <link rel="stylesheet" href="../exercises/better-tabs/style.css" />
+    <script defer src="../exercises/better-tabs/better-tabs.js"></script>
+
     <link rel="stylesheet" href="../components/modal/style.css" />
     <script defer src="../components/modal/modal.js"></script>
 
@@ -121,7 +124,7 @@
         </div>
 
         <section class="exercise shadow-md" aria-labelledby="accordion-exercise">
-          <h3 id="accordion-exercise">Homework: Accordion</h3>
+          <h3 id="accordion-exercise">Homework: Accordion ✅</h3>
 
           <p class="pb-4">
             Add onto the Accordion implementation such that
@@ -234,6 +237,7 @@
               <button
                 id="tab-3"
                 role="tab"
+                disabled
                 aria-selected="false"
                 aria-controls="tab-panel-3"
                 tabindex="-1"
@@ -255,7 +259,7 @@
                 <a href="#tabs-component" class="text-blue-800 underline">Log out</a>
               </div>
 
-              <div id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" class="hidden">
+              <div id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" class="invisible">
                 <h3 class="mb-1 font-semibold">Recent activity:</h3>
 
                 <ul class="mb-3">
@@ -272,7 +276,7 @@
                 </a>
               </div>
 
-              <div id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" class="hidden">
+              <div id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" class="invisible">
                 <h3 class="mb-1 font-semibold">Manage your account settings:</h3>
 
                 <ul class="mb-3">
@@ -294,7 +298,7 @@
         </div>
 
         <section class="exercise shadow-md" aria-labelledby="tabs-exercise">
-          <h3 id="tabs-exercise">Homework: Tabs</h3>
+          <h3 id="tabs-exercise">Homework: Tabs ✅</h3>
 
           <ol class="list-decimal space-y-2 py-2 *:ml-6">
             <li>
