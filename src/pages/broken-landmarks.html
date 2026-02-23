@@ -28,10 +28,10 @@
   </head>
 
   <body class="min-h-dvh">
-    <div class="sticky top-0 z-10 bg-slate-300/30 py-3 shadow-lg backdrop-blur-sm">
+    <header class="sticky top-0 z-10 bg-slate-300/30 py-3 shadow-lg backdrop-blur-sm">
       <a href="#main-content" class="skip-link">Skip to content</a>
 
-      <div
+      <nav
         class="container mx-auto flex items-center justify-between gap-4 max-md:flex-wrap [&_a]:p-2"
       >
         <h1 class="max-md:mx-auto">
@@ -54,32 +54,27 @@
           <li><a href="./forms">Forms</a></li>
           <li><a href="./components">Components</a></li>
         </ul>
-      </div>
-    </div>
+      </nav>
+    </header>
 
-    <span id="main-content" class="grid place-items-center" tabindex="-1">
+    <main id="main-content" class="grid place-items-center" tabindex="-1">
       <div class="text-center text-xl">
         <p>
           You found the secret "Broken Landmarks" page! 🥳
           <br />
-          Hmm... why are all the colors off?
+          Awesome, looks like all of the colors are back, and so is our accessible page!
         </p>
 
         <br />
-
-        <p>
-          Try to identify and fix all <b>landmark element related issues</b> you can find - there's
-          quite a few of them...
-        </p>
 
         <a href="./introduction" class="font-semibold text-blue-800 underline">
           Back to Introduction</a
         >
       </div>
-    </span>
+    </main>
 
-    <div class="bg-slate-300/30 py-5 text-center">
+    <footer class="bg-slate-300/30 py-5 text-center">
       <p>Web A11y for Devs, <span id="current-year"></span></p>
-    </div>
+    </footer>
   </body>
 </html>
