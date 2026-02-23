@@ -25,6 +25,7 @@ main.forms {
 
     &::placeholder {
       font-size: 14px;
+      font-weight: normal;
     }
 
     @media screen and (width < 450px) {
