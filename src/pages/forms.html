@@ -29,7 +29,9 @@
     <!-- Page specific assets: Forms -->
     <link rel="stylesheet" href="../styles/forms.css" />
 
-    <script src="../forms/forms.js" defer></script>
+    <script defer src="../forms/forms.js"></script>
+
+    <script defer src="../exercises/form-live-regions/form-live.regions.js"></script>
   </head>
 
   <body class="min-h-dvh">
@@ -395,7 +397,7 @@
         class="container relative my-6 flex items-stretch gap-4 *:max-w-[75ch] max-2xl:block max-2xl:space-y-8"
       >
         <section class="exercise shadow-md" aria-labelledby="live-regions-exercise">
-          <h3 id="live-regions-exercise">Homework: Errors & Live Regions</h3>
+          <h3 id="live-regions-exercise">Homework: Errors & Live Regions ✅</h3>
 
           <p>
             Show the appropriate <b>inline error messages</b> when the <b>form on the right</b> is
@@ -436,18 +438,32 @@
               <p>Enter your credentials to get access the portal</p>
             </div>
 
-            <form class="w-full space-y-6">
+            <form novalidate class="w-full space-y-6">
               <div class="form-control">
                 <label for="hw-email">Company email</label>
-                <input id="hw-email" type="email" placeholder="example@company-domain.com" />
+                <input
+                  id="hw-email"
+                  name="email"
+                  type="email"
+                  placeholder="example@company-domain.com"
+                  aria-describedby="hw-email-error"
+                />
+                <span id="hw-email-error" aria-live="polite" class="text-red-600"></span>
               </div>
 
               <div class="form-control">
                 <label for="hw-pwd">Password</label>
-                <input id="hw-pwd" type="password" placeholder="Your password here" />
+                <input id="hw-pwd" name="pwd" type="password" placeholder="Your password here" />
+                <span id="hw-pwd-error" aria-live="polite" class="text-red-600"></span>
               </div>
 
               <button type="submit" class="mt-8 w-full">Log in</button>
+
+              <p
+                id="hw-success"
+                aria-live="polite"
+                class="text-center text-lg font-semibold text-green-700"
+              ></p>
             </form>
           </div>
 

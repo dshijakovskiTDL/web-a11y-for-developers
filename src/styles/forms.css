@@ -28,6 +28,10 @@ main.forms {
       font-weight: normal;
     }
 
+    &[aria-invalid='true'] {
+      border: 2px solid var(--brand-primary);
+    }
+
     @media screen and (width < 450px) {
       min-width: unset;
     }
