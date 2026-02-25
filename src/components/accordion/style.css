@@ -1,5 +1,4 @@
-.accordion,
-.accordion-item {
+.accordion {
   --border-col: #888;
 
   .trigger,
@@ -84,7 +83,7 @@
   }
 }
 
-:is(.accordion, .accordion-item):has(.trigger[aria-expanded='true']) {
+.accordion:has(.trigger[aria-expanded='true']) {
   .panel {
     grid-template-rows: 1fr;
   }
