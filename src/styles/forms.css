@@ -1,77 +1,78 @@
-.form-control {
-  display: grid;
-  gap: 0.25rem;
-  min-width: fit-content;
-}
-
-label {
-  display: block;
-  width: fit-content;
-  font-weight: 600;
-}
-
-input {
-  min-width: 300px;
-  max-width: 45ch;
-  width: 100%;
-  padding: 0.45rem 0.75rem;
-
-  border: 1px solid var(--brand-secondary);
-  border-radius: 0.5rem;
-
-  &:focus {
-    outline-color: var(--brand-secondary);
+main.forms {
+  .form-control {
+    display: grid;
+    gap: 0.25rem;
+    min-width: fit-content;
   }
 
-  &::placeholder {
-    font-size: 14px;
-    font-weight: normal;
+  label {
+    display: block;
+    width: fit-content;
+    font-weight: 600;
   }
 
-  @media screen and (width < 450px) {
-    min-width: unset;
-  }
-}
+  input {
+    min-width: 300px;
+    width: 100%;
+    padding: 0.45rem 0.75rem;
 
-input + [aria-live] {
-  &:not(:empty)::before {
-    content: '⚠';
-    padding-right: 0.5ch;
-  }
-}
+    border: 1px solid var(--brand-secondary);
+    border-radius: 0.5rem;
 
-[type='submit'],
-button[hw-toggle] {
-  display: block;
-  padding: 0.5rem 1rem;
-  background-color: var(--brand-primary);
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
+    &:focus {
+      outline-color: var(--brand-secondary);
+    }
 
-  &:focus-visible {
-    outline: 2px solid var(--brand-primary);
-    outline-offset: 2px;
+    &::placeholder {
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    @media screen and (width < 450px) {
+      min-width: unset;
+    }
   }
 
-  &:disabled {
-    background-color: #666;
-    pointer-events: none;
-    cursor: default;
+  input + [aria-live] {
+    &:not(:empty)::before {
+      content: '⚠';
+      padding-right: 0.5ch;
+    }
   }
 
-  &:active {
-    scale: 0.95;
-  }
-}
+  [type='submit'],
+  button[hw-toggle] {
+    display: block;
+    padding: 0.5rem 1rem;
+    background-color: var(--brand-primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
 
-.spinner {
-  width: 2.5rem;
-  aspect-ratio: 1 / 1;
-  border: 5px solid var(--brand-primary);
-  border-left-color: transparent;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+    &:focus-visible {
+      outline: 2px solid var(--brand-primary);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      background-color: #666;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:active {
+      scale: 0.95;
+    }
+  }
+
+  .spinner {
+    width: 2.5rem;
+    aspect-ratio: 1 / 1;
+    border: 5px solid var(--brand-primary);
+    border-left-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
 }
 
 @keyframes spin {
