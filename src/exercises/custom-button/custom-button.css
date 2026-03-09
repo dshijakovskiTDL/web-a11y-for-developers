@@ -1,1 +1,19 @@
-/* TODO: Style up your custom button with proper focus indicators and a button-like look. */
+/* Style up your custom button with proper focus indicators and a button-like look. */
+
+div[role='button'] {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--brand-secondary);
+  color: white;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--brand-secondary);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+}

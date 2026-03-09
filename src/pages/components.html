@@ -30,23 +30,19 @@
     <link rel="stylesheet" href="../components/accordion/style.css" />
     <script defer src="../components/accordion/accordion.js"></script>
 
+    <script defer src="../exercises/accordions/accordions.js"></script>
+
     <link rel="stylesheet" href="../components/tabs/style.css" />
     <script defer src="../components/tabs/tabs.js"></script>
+
+    <link rel="stylesheet" href="../exercises/better-tabs/style.css" />
+    <script defer src="../exercises/better-tabs/better-tabs.js"></script>
 
     <link rel="stylesheet" href="../components/modal/style.css" />
     <script defer src="../components/modal/modal.js"></script>
 
     <link rel="stylesheet" href="../components/modal/native-modal/style.css" />
     <script defer src="../components/modal/native-modal/native-modal.js"></script>
-
-    <link rel="stylesheet" href="../components/bonus-components/switch/style.css" />
-    <script defer src="../components/bonus-components/switch/switch.js"></script>
-
-    <link rel="stylesheet" href="../components/bonus-components/dropdown/style.css" />
-    <script defer src="../components/bonus-components/dropdown/dropdown.js"></script>
-
-    <link rel="stylesheet" href="../components/bonus-components/autocomplete/style.css" />
-    <script defer src="../components/bonus-components/autocomplete/autocomplete.js"></script>
   </head>
 
   <body class="min-h-dvh">
@@ -73,11 +69,8 @@
           class="flex flex-wrap gap-2 *:min-w-fit max-md:w-full max-md:justify-evenly max-sm:text-center"
         >
           <li><a href="./introduction">Introduction</a></li>
-          <li>
-            <a href="./components" aria-current="page">Components</a>
-          </li>
+          <li><a href="./components" aria-current="page">Components</a></li>
           <li><a href="./forms">Forms</a></li>
-          <li><a href="./best-practices">Best Practices</a></li>
         </ul>
       </nav>
     </header>
@@ -131,7 +124,7 @@
         </div>
 
         <section class="exercise shadow-md" aria-labelledby="accordion-exercise">
-          <h3 id="accordion-exercise">Homework: Accordion</h3>
+          <h3 id="accordion-exercise">Homework: Accordion ✅</h3>
 
           <p class="pb-4">
             Add onto the Accordion implementation such that
@@ -244,6 +237,7 @@
               <button
                 id="tab-3"
                 role="tab"
+                disabled
                 aria-selected="false"
                 aria-controls="tab-panel-3"
                 tabindex="-1"
@@ -265,7 +259,7 @@
                 <a href="#tabs-component" class="text-blue-800 underline">Log out</a>
               </div>
 
-              <div id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" class="hidden">
+              <div id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" class="invisible">
                 <h3 class="mb-1 font-semibold">Recent activity:</h3>
 
                 <ul class="mb-3">
@@ -282,7 +276,7 @@
                 </a>
               </div>
 
-              <div id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" class="hidden">
+              <div id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" class="invisible">
                 <h3 class="mb-1 font-semibold">Manage your account settings:</h3>
 
                 <ul class="mb-3">
@@ -304,7 +298,7 @@
         </div>
 
         <section class="exercise shadow-md" aria-labelledby="tabs-exercise">
-          <h3 id="tabs-exercise">Homework: Tabs</h3>
+          <h3 id="tabs-exercise">Homework: Tabs ✅</h3>
 
           <ol class="list-decimal space-y-2 py-2 *:ml-6">
             <li>
@@ -427,7 +421,7 @@
         </div>
 
         <section class="exercise shadow-md" aria-labelledby="modal-exercise">
-          <h3 id="modal-exercise">Homework: Modal</h3>
+          <h3 id="modal-exercise">Homework: Modal ✅</h3>
 
           <p class="pb-4">
             Try to fix everything wrong with the <b>custom Modal implementation</b> below.
@@ -437,17 +431,23 @@
           </p>
 
           <div class="modal-container">
-            <div class="modal-trigger" data-broken-modal="broken-md-1">Open Modal</div>
+            <button class="modal-trigger" data-modal="broken-md-1">Open Modal</button>
 
             <div class="modal-backdrop hidden">
-              <div id="broken-md-1">
-                <div class="flex items-center justify-between gap-4">
-                  <h1>This is a broken title</h1>
-                  <div>⨉</div>
+              <div
+                id="broken-md-1"
+                role="dialog"
+                aria-modal="true"
+                tabindex="-1"
+                aria-labelledby="broken-md-title"
+              >
+                <div class="mb-4 flex items-center justify-between gap-4">
+                  <h1 class="text-lg font-semibold" id="broken-md-title">This is a broken title</h1>
+                  <button data-dismiss aria-label="Close the Modal">⨉</button>
                 </div>
 
                 <div class="space-y-4">
-                  <div>This Modal is very broken, please fix it!</div>
+                  <div>There, this Modal is now working correctly! Great success 👍👍</div>
 
                   <input
                     type="email"
@@ -471,94 +471,6 @@
             </div>
           </div>
         </section>
-      </section>
-
-      <hr />
-
-      <section class="container" aria-labelledby="bonus-components">
-        <h2 id="bonus-components">Bonus components</h2>
-
-        <p class="pb-4">Extra components to practice accessible patterns.</p>
-
-        <h3 id="switch-component">Switch</h3>
-
-        <p class="pb-4">
-          An <b>accessible Switch</b> using <span class="code">role="switch"</span> and
-          <span class="code">aria-checked</span> as its single source of truth.
-        </p>
-
-        <button type="button" class="switch" role="switch" aria-checked="false">
-          <span class="switch-track" aria-hidden="true">
-            <span class="switch-thumb" aria-hidden="true"></span>
-          </span>
-          <span class="switch-label">Enable notifications</span>
-        </button>
-
-        <h3 id="dropdown-component" class="mt-8">Dropdown (Menu)</h3>
-
-        <p class="pb-4">
-          A <b>menu dropdown</b> with a trigger button and a popup menu positioned under it using
-          <b>CSS Anchor Positioning</b>. Items use <b>roving tabindex</b> for keyboard navigation.
-        </p>
-
-        <div class="dropdown" data-dropdown>
-          <button
-            type="button"
-            id="dropdown-trigger-1"
-            class="dropdown-trigger"
-            aria-haspopup="menu"
-            aria-expanded="false"
-            aria-controls="dropdown-menu-1"
-          >
-            Account
-          </button>
-
-          <div
-            id="dropdown-menu-1"
-            class="dropdown-menu"
-            role="menu"
-            aria-labelledby="dropdown-trigger-1"
-          >
-            <button type="button" role="menuitem" tabindex="-1">Profile</button>
-            <button type="button" role="menuitem" tabindex="-1">Settings</button>
-            <button type="button" role="menuitem" tabindex="-1">Log out</button>
-          </div>
-        </div>
-
-        <h3 id="autocomplete-component" class="mt-8">Autocomplete</h3>
-
-        <p class="pb-4">
-          A <b>combobox</b> with filtered suggestions, <b>aria-activedescendant</b> for the
-          highlighted option, and <b>CSS Anchor Positioning</b> for the list. Input is debounced for
-          search.
-        </p>
-
-        <div
-          class="autocomplete"
-          data-autocomplete
-          data-suggestions='["Apple", "Apricot", "Banana", "Blackberry", "Blueberry", "Cherry", "Cranberry", "Grape", "Lemon", "Lime", "Mango", "Melon", "Orange", "Peach", "Pear", "Plum", "Raspberry", "Strawberry"]'
-        >
-          <label for="autocomplete-input-1" class="block pb-1 font-semibold">Search fruit</label>
-          <input
-            id="autocomplete-input-1"
-            type="text"
-            class="autocomplete-input"
-            role="combobox"
-            aria-expanded="false"
-            aria-controls="autocomplete-list-1"
-            aria-autocomplete="list"
-            aria-activedescendant=""
-            autocomplete="off"
-          />
-          <div
-            id="autocomplete-list-1"
-            class="autocomplete-listbox"
-            role="listbox"
-            aria-label="Suggestions"
-          >
-            <!-- Options rendered by JS -->
-          </div>
-        </div>
       </section>
     </main>
 

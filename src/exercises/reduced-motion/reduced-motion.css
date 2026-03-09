@@ -1,1 +1,7 @@
-/* TODO: Stop the spinner from spinning when users have "Reduced Motion" enabled.  */
+/* Stop the spinner from spinning when users have "Reduced Motion" enabled.  */
+
+@media (prefers-reduced-motion: reduce) {
+  #spinner {
+    animation: none !important;
+  }
+}
