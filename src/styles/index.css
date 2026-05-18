@@ -141,7 +141,7 @@ hr {
   padding-inline: 12px;
 
   @media screen and (width < 1280) {
-    max-width: 80ch;
+    max-width: 88ch;
   }
 }
 
