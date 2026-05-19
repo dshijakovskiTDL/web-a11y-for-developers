@@ -84,7 +84,7 @@
   }
 }
 
-.accordion:has(.trigger[aria-expanded='true']) {
+:is(.accordion, .accordion-item):has(.trigger[aria-expanded='true']) {
   .panel {
     grid-template-rows: 1fr;
   }
